@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.25.0
+version: v1.25.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'snyk:lic:npm:symbol:mpl-2.0':
@@ -7,4 +7,10 @@ ignore:
         reason: None Given
         expires: 2023-08-10T15:00:14.987Z
         created: 2023-07-11T15:00:14.995Z
-patch: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:minimatch:20160620':
+    - tap > nyc > istanbul > fileset > glob > minimatch:
+        patched: '2024-03-16T15:36:12.329Z'
+        id: 'npm:minimatch:20160620'
+        path: tap > nyc > istanbul > fileset > glob > minimatch
